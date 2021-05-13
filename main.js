@@ -235,103 +235,105 @@
     headerOpen.addEventListener("click", toggleHeaderOpen);
     headerClose.addEventListener("click", toggleHeaderClose);
 
-    //library
-    const libraryContainer = document.querySelector(".elements-container");
-    const libraryElementsLength = document.querySelectorAll(".element-course").length;
-    const libraryElementLink = document.querySelectorAll(".element-cover > a");
-    const libraryElementImg = document.querySelectorAll(".element-cover");
-    const libraryElementTitle = document.querySelectorAll(".element-title-text");
-    
-    if(libraryElementsLength) {
-      libraryContainer.innerHTML = `<h2 class="title library__title">Мои курсы</h2>`;
-       
-      for (let i = 0; i < libraryElementsLength; i++) {
-            libraryContainer.innerHTML += `<a href="${libraryElementLink[i].getAttribute("href")}" target="_blank" class="library-block">
-                <div class="library-block-left">
-                    <div
-                        class="library-block-thumb"
-                        style="${libraryElementImg[i].getAttribute("style")}; background-size: cover; background-repeat: no-repeat; background-position: top center;"
-                    ></div>
-                    <div class="library-block-text">
-                        <span
-                            class="library-block__subtitle"
-                        >
-                            Курс
-                        </span>
-                        <h3
-                            class="library-block__title"
-                        >
-                            ${libraryElementTitle[i].innerHTML}
-                        </h3>
+    if (window.location.href === "https://shop.iomp.ru/personal/") {
+        //library
+        const libraryContainer = document.querySelector(".elements-container");
+        const libraryElementsLength = document.querySelectorAll(".element-course").length;
+        const libraryElementLink = document.querySelectorAll(".element-cover > a");
+        const libraryElementImg = document.querySelectorAll(".element-cover");
+        const libraryElementTitle = document.querySelectorAll(".element-title-text");
+        
+        if(libraryElementsLength) {
+          libraryContainer.innerHTML = `<h2 class="title library__title">Мои курсы</h2>`;
+           
+          for (let i = 0; i < libraryElementsLength; i++) {
+                libraryContainer.innerHTML += `<a href="${libraryElementLink[i].getAttribute("href")}" target="_blank" class="library-block">
+                    <div class="library-block-left">
+                        <div
+                            class="library-block-thumb"
+                            style="${libraryElementImg[i].getAttribute("style")}; background-size: cover; background-repeat: no-repeat; background-position: top center;"
+                        ></div>
+                        <div class="library-block-text">
+                            <span
+                                class="library-block__subtitle"
+                            >
+                                Курс
+                            </span>
+                            <h3
+                                class="library-block__title"
+                            >
+                                ${libraryElementTitle[i].innerHTML}
+                            </h3>
+                        </div>
                     </div>
-                </div>
-                <div class="library-block-right">
-                    <div class="library-block__btn">
-                        <svg
-                            width="22"
-                            height="22"
-                            viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path d="M10 0C4.48566 0 0 4.48609 0 10C0 15.5139 4.48566 20 10 20C15.5143 20 20 15.5139 20 10C20 4.48609 15.5143 0 10 0ZM10 19.1667C4.94547 19.1667 0.83332 15.0545 0.83332 10C0.83332 4.94547 4.94547 0.83332 10 0.83332C15.0545 0.83332 19.1667 4.94547 19.1667 10C19.1667 15.0545 15.0545 19.1667 10 19.1667Z" />
-                            <path d="M13.9754 9.64966L8.14211 5.89966C8.01434 5.81626 7.84914 5.81177 7.7173 5.88419C7.58301 5.95743 7.5 6.09743 7.5 6.25001V13.75C7.5 13.9026 7.58301 14.0426 7.7173 14.1158C7.77914 14.1496 7.84832 14.1667 7.91668 14.1667C7.9948 14.1667 8.07375 14.1447 8.14211 14.1004L13.9754 10.3504C14.0943 10.2739 14.1667 10.1416 14.1667 10C14.1667 9.85841 14.0943 9.72618 13.9754 9.64966ZM8.33332 12.9867V7.01337L12.9793 10L8.33332 12.9867Z" />
-                        </svg>
-                        <span>Перейти к обучению</span>
+                    <div class="library-block-right">
+                        <div class="library-block__btn">
+                            <svg
+                                width="22"
+                                height="22"
+                                viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path d="M10 0C4.48566 0 0 4.48609 0 10C0 15.5139 4.48566 20 10 20C15.5143 20 20 15.5139 20 10C20 4.48609 15.5143 0 10 0ZM10 19.1667C4.94547 19.1667 0.83332 15.0545 0.83332 10C0.83332 4.94547 4.94547 0.83332 10 0.83332C15.0545 0.83332 19.1667 4.94547 19.1667 10C19.1667 15.0545 15.0545 19.1667 10 19.1667Z" />
+                                <path d="M13.9754 9.64966L8.14211 5.89966C8.01434 5.81626 7.84914 5.81177 7.7173 5.88419C7.58301 5.95743 7.5 6.09743 7.5 6.25001V13.75C7.5 13.9026 7.58301 14.0426 7.7173 14.1158C7.77914 14.1496 7.84832 14.1667 7.91668 14.1667C7.9948 14.1667 8.07375 14.1447 8.14211 14.1004L13.9754 10.3504C14.0943 10.2739 14.1667 10.1416 14.1667 10C14.1667 9.85841 14.0943 9.72618 13.9754 9.64966ZM8.33332 12.9867V7.01337L12.9793 10L8.33332 12.9867Z" />
+                            </svg>
+                            <span>Перейти к обучению</span>
+                        </div>
                     </div>
-                </div>
-            </a>`;
-        } 
-    }
-    
-    const search = document.querySelector(".quicksearch");
-    
-    search.addEventListener("change", (e) => {
-        if (libraryElementsLength) {
-            libraryContainer.innerHTML = `<h2 class="title library__title">Мои курсы</h2>`;
-            
-            let reg = new RegExp(search.value.toLowerCase());
-            
-            for (let i = 0; i < libraryElementsLength; i++) {
-                if(reg.test(libraryElementTitle[i].innerHTML.toLowerCase())) {
-                    libraryContainer.innerHTML += `
-                        <a href="${libraryElementLink[i].getAttribute("href")}" target="_blank" class="library-block">
-                            <div class="library-block-left">
-                                <div
-                                    class="library-block-thumb"
-                                    style="${libraryElementImg[i].getAttribute("style")}; background-size: cover; background-repeat: no-repeat; background-position: top center;"
-                                ></div>
-                                <div class="library-block-text">
-                                    <span
-                                        class="library-block__subtitle"
-                                    >
-                                        Курс
-                                    </span>
-                                    <h3
-                                        class="library-block__title"
-                                    >
-                                        ${libraryElementTitle[i].innerHTML}
-                                    </h3>
-                                </div>
-                            </div>
-                            <div class="library-block-right">
-                                <div class="library-block__btn">
-                                    <svg
-                                        width="22"
-                                        height="22"
-                                        viewBox="0 0 20 20"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path d="M10 0C4.48566 0 0 4.48609 0 10C0 15.5139 4.48566 20 10 20C15.5143 20 20 15.5139 20 10C20 4.48609 15.5143 0 10 0ZM10 19.1667C4.94547 19.1667 0.83332 15.0545 0.83332 10C0.83332 4.94547 4.94547 0.83332 10 0.83332C15.0545 0.83332 19.1667 4.94547 19.1667 10C19.1667 15.0545 15.0545 19.1667 10 19.1667Z" />
-                                        <path d="M13.9754 9.64966L8.14211 5.89966C8.01434 5.81626 7.84914 5.81177 7.7173 5.88419C7.58301 5.95743 7.5 6.09743 7.5 6.25001V13.75C7.5 13.9026 7.58301 14.0426 7.7173 14.1158C7.77914 14.1496 7.84832 14.1667 7.91668 14.1667C7.9948 14.1667 8.07375 14.1447 8.14211 14.1004L13.9754 10.3504C14.0943 10.2739 14.1667 10.1416 14.1667 10C14.1667 9.85841 14.0943 9.72618 13.9754 9.64966ZM8.33332 12.9867V7.01337L12.9793 10L8.33332 12.9867Z" />
-                                    </svg>
-                                    <span>Перейти к обучению</span>
-                                </div>
-                            </div>
-                        </a>`;
-                } 
-            }
+                </a>`;
+            } 
         }
-    });
+        
+        const search = document.querySelector(".quicksearch");
+        
+        search.addEventListener("change", (e) => {
+            if (libraryElementsLength) {
+                libraryContainer.innerHTML = `<h2 class="title library__title">Мои курсы</h2>`;
+                
+                let reg = new RegExp(search.value.toLowerCase());
+                
+                for (let i = 0; i < libraryElementsLength; i++) {
+                    if(reg.test(libraryElementTitle[i].innerHTML.toLowerCase())) {
+                        libraryContainer.innerHTML += `
+                            <a href="${libraryElementLink[i].getAttribute("href")}" target="_blank" class="library-block">
+                                <div class="library-block-left">
+                                    <div
+                                        class="library-block-thumb"
+                                        style="${libraryElementImg[i].getAttribute("style")}; background-size: cover; background-repeat: no-repeat; background-position: top center;"
+                                    ></div>
+                                    <div class="library-block-text">
+                                        <span
+                                            class="library-block__subtitle"
+                                        >
+                                            Курс
+                                        </span>
+                                        <h3
+                                            class="library-block__title"
+                                        >
+                                            ${libraryElementTitle[i].innerHTML}
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="library-block-right">
+                                    <div class="library-block__btn">
+                                        <svg
+                                            width="22"
+                                            height="22"
+                                            viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path d="M10 0C4.48566 0 0 4.48609 0 10C0 15.5139 4.48566 20 10 20C15.5143 20 20 15.5139 20 10C20 4.48609 15.5143 0 10 0ZM10 19.1667C4.94547 19.1667 0.83332 15.0545 0.83332 10C0.83332 4.94547 4.94547 0.83332 10 0.83332C15.0545 0.83332 19.1667 4.94547 19.1667 10C19.1667 15.0545 15.0545 19.1667 10 19.1667Z" />
+                                            <path d="M13.9754 9.64966L8.14211 5.89966C8.01434 5.81626 7.84914 5.81177 7.7173 5.88419C7.58301 5.95743 7.5 6.09743 7.5 6.25001V13.75C7.5 13.9026 7.58301 14.0426 7.7173 14.1158C7.77914 14.1496 7.84832 14.1667 7.91668 14.1667C7.9948 14.1667 8.07375 14.1447 8.14211 14.1004L13.9754 10.3504C14.0943 10.2739 14.1667 10.1416 14.1667 10C14.1667 9.85841 14.0943 9.72618 13.9754 9.64966ZM8.33332 12.9867V7.01337L12.9793 10L8.33332 12.9867Z" />
+                                        </svg>
+                                        <span>Перейти к обучению</span>
+                                    </div>
+                                </div>
+                            </a>`;
+                    } 
+                }
+            }
+        });
+    }
     
     (function (w, t, p, v, c, f, s, r, h, l, d) { w[p] = "//callpy.com/"; w[v] = "5.10"; w[c] = false; if (t == w) { var tmp = l.callpy_data; if (tmp == null || !l.callpy_html || !l[c]) { w[f] = false } else { w[f] = true; w[s] = JSON.parse(tmp); var tm = new Date().getTime(); if (tm - w[s].lastSave < 20000) { if (w[s].insertcode) { eval(w[s].insertcode) } else { w[f] = false } } else { w[f] = false } } } else { w[f] = false } var callpy_script = d.createElement("script"); try { var tmp = parent.window.location.href ? 1 : 0 } catch (e) { var tmp = 0 } callpy_script.type = "text/javascript"; callpy_script.async = true; if (!w[f] || !l[h]) { l[h] = new Date().getTime() } callpy_script.src = w[p] + "c/" + w.location.host.replace(/www./i, "") + "/" + (t == w ? (w[f] ? 1 : 2) : (tmp == 1 ? 4 : 3)) + ".js?id=19399&m=" + l[h]; callpy_script.onload = function () { iowisp.init() }; d.body.appendChild(callpy_script) })(window, window.top, "callpy_path", "callpy_version", "tiny", "sven", "callpy_storage", "callpy_chat_scroller", "callpy_lastchat", localStorage, document);
 </script>
