@@ -210,8 +210,8 @@
         </header>`;
     }
     
-    const headerGamingWrapper = document.querySelector(".header-gaming") && document.querySelector(".header-gaming").appendChild(header__gaming);
-    const headerNotificationsWrapper = document.querySelector(".header-gaming") && document.querySelector(".header-notifications").appendChild(header__notifications);
+    const headerGamingWrapper = header__gaming && document.querySelector(".header-gaming").appendChild(header__gaming);
+    const headerNotificationsWrapper = header__notifications && document.querySelector(".header-notifications").appendChild(header__notifications);
     
     const headerOpen = document.querySelector(".header-menu-burger");
     const headerClose = document.querySelector(".header-modal-close");
