@@ -4,7 +4,7 @@
     const header__notifications = document.querySelector(".header__notifications");
     const header__gaming = document.querySelector(".gaming-currency-header-link");
     
-    if(document.querySelector(".header")) {
+    if(document.querySelector(".header") && window.location.href.indexOf("moderator") === -1 && window.location.href.indexOf("webinar") === -1) {
         document.querySelector(".header").innerHTML = `<header class="header2">
             <div class="container">
                 <div class="header-wrapper">
