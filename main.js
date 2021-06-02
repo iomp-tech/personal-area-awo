@@ -2,7 +2,7 @@
     //header
     const avatarHeader = document.querySelector(".user-menu-profile-image") && document.querySelector(".user-menu-profile-image").getAttribute("style");
     const header__notifications = document.querySelector(".header__notifications");
-    const header__gaming = document.querySelector(".gaming-currency-header-link");
+    const header__gaming = document.querySelectorAll(".gaming-currency-header-link");
     
     if(document.querySelector(".header") && window.location.href.indexOf("moderator") === -1 && window.location.href.indexOf("webinar") === -1) {
         document.querySelector(".header").innerHTML = `<header class="header2">
@@ -210,7 +210,12 @@
         </header>`;
     }
     
-    const headerGamingWrapper = header__gaming && document.querySelector(".header-gaming").appendChild(header__gaming);
+    if (header__gaming) {
+        for (let i = 0; i < header__gaming.length; i++) {
+            document.querySelector(".header-gaming").appendChild(header__gaming[i]); 
+        }
+    }
+    
     const headerNotificationsWrapper = header__notifications && document.querySelector(".header-notifications").appendChild(header__notifications);
     
     const headerOpen = document.querySelector(".header-menu-burger");
@@ -234,7 +239,7 @@
 	    }
     }
     
-    if(headerOpen && headerClose) {
+    if (headerOpen && headerClose) {
         headerOpen.addEventListener("click", toggleHeaderOpen);
         headerClose.addEventListener("click", toggleHeaderClose);
     }
