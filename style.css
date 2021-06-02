@@ -1,5 +1,4 @@
 /* Interface */
-
 * {
   margin: 0;
   padding: 0;
@@ -697,6 +696,7 @@ a:hover, a:focus {
 
 /* Library */
 .library__title {
+  margin-top: 50px;
   margin-bottom: 50px;
 }
 
